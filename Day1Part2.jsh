@@ -1,14 +1,13 @@
 File file = new File("day1_input.txt");
 if(!file.exists()) {
     System.err.println("Can't find day1_input.txt");
-/exit
-}
-ArrayList<Integer> list = new ArrayList<Integer>();
-
-while(true) {
-    BufferedReader reader = new BufferedReader(new FileReader(file));    
-    try{
-        int result = 0;
+} else {
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    int result = 0;
+    list.add(0);
+outer:
+    while(true) {
+        BufferedReader reader = new BufferedReader(new FileReader(file));    
         String line;
         while((line = reader.readLine()) != null) {
             int mod = 0;
@@ -20,14 +19,12 @@ while(true) {
                 result += mod;
                 if(list.contains(result)) {
                     System.out.println("Result: "+result);
-/exit
+                    break outer;
                 }else {
                     list.add(result);
                 }
             }
         }
-    } catch(EOFException e) {
-    } finally{
         reader.close();
     }
 }

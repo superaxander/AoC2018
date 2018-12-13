@@ -29,4 +29,4 @@ if (!file.exists()) {
     reader.close();
 }
 Thread.sleep(1000);
-///exit
+/exit

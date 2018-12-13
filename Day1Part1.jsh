@@ -1,4 +1,4 @@
-File file = new File("day1_input.txt");
+File file = new File("D:/Programming/AdventOfCode/day1_input.txt");
 if(!file.exists()) {
     System.err.println("Can't find day1_input.txt");
     System.exit(1);
@@ -19,4 +19,5 @@ while((line = reader.readLine()) != null) {
     }
 }
 System.out.println("Result: "+result);
+Thread.sleep(1000);
 /exit
